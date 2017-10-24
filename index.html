@@ -7,13 +7,13 @@
 	<style>
 		/* All of our CSS code goes here... */
 		* { 
-			outline: 1px dotted purple;
+			/* outline: 1px dotted purple; */
 		}
 
 		.pacman{
 			width: 50px;
 			height: 50px;
-			background-image: url('pacman.png');
+			background-image: url('scarypacman.png');
 			display: inline-block;
 		}
 
@@ -53,8 +53,13 @@
 			display: inline-block;
 		}
 
+		#score{
+			width: 100px;
+			display: inline-block;
+		}
+
 		div {
-			margin: -2px;
+			margin: -3px;
 		}
 		
 
@@ -64,7 +69,9 @@
 </head>
 <body>
 	<!-- All of our HTML code goes here... -->
-	Score: <div id="score">Score:</div>
+	Score: <div id="score">0</div>
+	<br>
+	<br>
 	<div id="world">
 		<!-- ... -->
 		<!-- <div class="wall"></div>
@@ -102,17 +109,17 @@
 	var map = [
 		[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 		[1,3,3,3,3,3,3,3,3,3,3,3,3,3,1],
+		[1,3,1,3,1,1,1,1,1,1,1,3,1,3,1],
+		[1,3,1,3,3,3,3,3,3,3,3,3,1,3,1],
+		[1,3,1,3,1,1,1,1,1,1,1,3,1,3,1],
 		[1,3,3,3,3,3,3,3,3,3,3,3,3,3,1],
+		[1,3,1,1,3,1,1,2,1,1,3,1,1,3,1],
+		[1,3,1,3,3,1,9,8,9,1,3,3,1,3,1],
+		[1,3,1,3,1,3,1,1,1,3,1,3,1,3,1],
 		[1,3,3,3,3,3,3,3,3,3,3,3,3,3,1],
-		[1,3,3,3,3,3,3,3,3,3,3,3,3,3,1],
-		[1,3,3,3,3,3,3,3,3,3,3,3,3,3,1],
-		[1,3,3,3,3,3,1,2,1,3,3,3,3,3,1],
-		[1,3,3,3,3,1,9,8,9,1,3,3,3,3,1],
-		[1,3,3,3,3,3,1,1,1,3,3,3,3,3,1],
-		[1,3,3,3,3,3,3,3,3,3,3,3,3,3,1],
-		[1,3,3,3,3,3,3,3,3,3,3,3,3,3,1],
+		[1,3,1,1,1,1,1,3,1,1,1,1,1,3,1],
 		[1,3,3,3,3,3,3,5,3,3,3,3,3,3,1],
-		[1,3,3,3,3,3,3,3,3,3,3,3,3,3,1],
+		[1,3,1,1,1,1,1,3,1,1,1,1,1,3,1],
 		[1,3,3,3,3,3,3,3,3,3,3,3,3,3,1],
 		[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 	]
@@ -206,8 +213,8 @@
 		}
 		drawWorld()
 		function drawScore(){
-			document.getElementById('score').outerHTML += score
-			// document.getElementById('score').innerHTML += score
+			document.getElementById('score').innerHTML = ""
+			document.getElementById('score').innerHTML += score
 		}
 		drawScore()
 		console.log(score)
