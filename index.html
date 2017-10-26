@@ -6,9 +6,9 @@
 	<title>PacMan</title>	
 	<style>
 		/* All of our CSS code goes here... */
-		* { 
-			/* outline: 1px dotted purple; */
-		}
+		/* * { 
+			outline: 1px dotted purple;
+		} */
 
 		.pacman{
 			width: 50px;
@@ -56,6 +56,14 @@
 		#score{
 			width: 100px;
 			display: inline-block;
+			color: red;
+			
+		}
+		
+		h3{
+			color: red;
+			display: inline-block;
+			margin-right: 5px;
 		}
 
 		div {
@@ -69,7 +77,9 @@
 </head>
 <body>
 	<!-- All of our HTML code goes here... -->
-	Score: <div id="score">0</div>
+	<div>
+		<h3>Score:</h3> <p id="score">0</p>
+	</div>
 	<br>
 	<br>
 	<div id="world">
